@@ -1,0 +1,288 @@
+*{
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  --main-green: #79BC35;
+  font-family: 'Tw Cen MT', 'sans serif ';
+  overflow-x: hidden;
+  --gradient-green: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+}
+
+
+#navbar{
+background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);  
+  text-align: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 1px 2px var(--main-green);
+    z-index: 10;
+}
+#nav_links{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 6em;
+}
+#nav_links li{
+  flex: 1;
+}
+
+#nav_links li a{
+    text-decoration: none;
+  color:#fff;
+  display: inline-block;
+  position: relative;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+#nav_links li a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--main-green);
+  transform-origin: bottom right;
+  transition: transform 0.30s ease-out;
+}
+
+#nav_links li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+h1{
+  font-weight: 900;
+  font-size: 2.0em;
+  text-align: center;
+  text-transform: capitalize;
+}
+#intro h1+p{
+  text-align:center;
+  font-size: 100%;
+}
+.green{
+  color: var(--main-green);
+  text-transform: capitalize
+}
+#welcome-section, #projects, #contacts{
+  padding-top: 100px;
+  min-height: 100vh; 
+}
+
+
+#welcome-section{
+  position: relative;
+  bottom: 6em;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+#welcome-section > img{
+/*   max-width: 350px;
+  max-height: 350px; */
+  max-width: 60%;
+  max-height: 60%;
+}
+#projects{
+background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15rem;
+}
+
+#projects>h1{
+  margin: 4rem;
+}
+#projects > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-tile{
+  display: flex;
+  flex-direction: column-reverse;
+  color: #fff;
+  margin: 20px;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 15px;
+  overflow: hidden;
+ box-shadow: 0 4px 15px grey;
+   text-decoration: none;
+  transition: width 0.3s;
+}
+
+.project-tile p{
+   background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  height: 20%;
+  text-align: center;
+  padding-top: 15px;
+  transition: height 0.2s linear, background-color 2s ease-out, background-image 1.5s ease-out, color 1s ease-in-out, opacity 1s ease;
+}
+.project-tile:hover{
+  width: 15.4rem;
+}
+.project-tile:hover p{
+   height: 100%;
+  background-color: #378b29;
+background-image: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+  opacity: 0.9;
+  padding-top: 45%;
+  font-weight: 900;
+  font-size: 150%;
+  color: #000;
+}
+
+.project-tile:first-child{
+  background-image: url("https://nalowageena.github.io/hosted-assets/tictactoe1.png");
+}
+.project-tile:nth-child(2){
+  background-image: url("https://nalowageena.github.io/hosted-assets/manu1.png");
+}
+.project-tile:nth-child(3){
+  background-image: url("https://nalowageena.github.io/hosted-assets/techdoc1.png");
+}
+.project-tile:last-child{
+  background-image: url("https://nalowageena.github.io/hosted-assets/surveyform1.png");
+}
+
+#contacts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#contacts h1{
+  padding-bottom: 2.6rem;
+}
+#social_media{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+#social_media ul{
+  display:flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-around;
+}
+#social_media ul li{
+  list-style-type: none;
+  flex: 1;
+  padding: 0 1.0rem;
+}
+#social_media ul li a{
+  text-decoration: none;
+}
+.green-circle{
+  background-image: var(--gradient-green);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 0.5s, height 0.4s, width 0.4s;
+}
+.fa-brands{
+  color: #fff; 
+  font-size: 1rem;
+  transition: color 0.4s;
+}
+.green-circle:hover{
+  background-image: none;
+  border: 1px solid #74d680;
+  height: 2.0rem;
+  width: 2.0rem;
+}
+.green-circle:hover .fa-brands{
+  color: #74d680;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+   
+  }
+  #navbar{
+  text-align: center;
+  box-shadow: none;
+}
+  #nav_links{
+    margin:auto;
+  flex-direction: row;
+  height: 10vh;
+   width: 40em;
+}
+ 
+  #welcome-section{
+    padding: 12vh;
+  }
+  
+ #projects, #contacts{
+  padding-top: 10vh;
+}
+  #intro h1{
+    font-size: 2.2em;
+  }
+  #intro h1+p{
+  font-size: 110%;
+}
+#nav_links li {
+  margin: auto;
+  }
+  
+  #social_media ul{
+  width: 50%;
+}
+ .green-circle{
+  height: 2.2rem;
+  width: 2.2rem;
+}
+.fa-brands{
+  font-size: 1.5rem;
+}
+.green-circle:hover{
+  height: 3.5rem;
+  width: 3.5rem;
+}
+  
+}
+
+@media only screen and (min-width: 800px) {
+ 
+  #welcome-section{
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 12vh;
+  }
+  
+ #projects, #contacts{
+  padding-top: 10vh;
+}
+  
+  #welcome-section > img{
+  max-width: 55%;
+  max-height: 55%;
+}
+  
+  #intro h1{
+    font-size: 2.5em;
+  }
+  
+  #intro h1+p{
+  font-size: 120%;
+}
+ 
+}
